@@ -32,7 +32,11 @@ export const metadata: Metadata = {
     "A clean Next.js App Router starter for converting Figma designs into responsive UI.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
