@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
+  <!--
+    White = hero visible. Bottom edge dips in the center to match
+    left-wave + right-wawe (high sides, low center).
+  -->
+  <path
+    fill="#ffffff"
+    d="M0 0
+       H1440
+       V720
+       C1260 720 1140 760 1020 790
+       C900 820 800 855 720 870
+       C640 855 540 820 420 790
+       C300 760 180 720 0 720
+       Z"
+  />
+</svg>
