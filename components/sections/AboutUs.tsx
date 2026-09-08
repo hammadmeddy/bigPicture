@@ -44,7 +44,7 @@ export default function AboutUs() {
     <section
       id="about-us"
       aria-labelledby="about-us-heading"
-      className="relative z-10 -mt-20 bg-cream pb-14 pt-2 sm:-mt-28 sm:pb-20 sm:pt-0 md:-mt-36 md:pb-24 lg:-mt-44"
+      className="relative z-0 -mt-1 bg-cream pb-14 pt-16 sm:pb-20 sm:pt-20 md:pb-24 md:pt-24"
     >
       <Container className="relative z-10 flex flex-col items-center text-center">
         <p className="font-cursive text-2xl text-gold sm:text-3xl">About Us</p>

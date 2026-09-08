@@ -10,28 +10,29 @@ export default function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-x-clip pt-24 text-center text-white sm:pt-28 md:pt-32 lg:pt-36"
+      className="relative z-10 overflow-x-clip pt-24 text-center text-white sm:pt-28 md:pt-32 lg:pt-36"
     >
       <Image
-        src="/images/hero.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
-
-      <Image
-        src="/images/hero-overall.png"
+        src="/images/hero-with-notch.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
         className="object-cover object-top"
+      />
+
+      {/* Blue gradient overlay with logo cutout */}
+      <Image
+        src="/images/hero-overlay-exact.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-top mix-blend-multiply"
         aria-hidden="true"
       />
 
-      <Container className="relative z-10 flex flex-col items-center px-4 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+      <Container className="relative z-10 flex flex-col items-center px-4 pb-28 sm:pb-36 md:pb-44 lg:pb-52">
         <p className="font-cursive text-xl text-gold sm:text-2xl md:text-3xl">
           Loved By Kids And Parents Alike
         </p>
@@ -85,25 +86,29 @@ export default function Hero() {
         </div>
       </Container>
 
-      <div className="relative z-20 -mt-6 -mb-8 w-full leading-[0] sm:-mt-8 sm:-mb-12 md:-mt-12 md:-mb-16">
+      {/* Wave transition with tooth logo */}
+      <div className="relative z-20 w-full overflow-visible">
+        {/* Tooth logo - centered between waves */}
+        <div className="pointer-events-none absolute left-1/2 bottom-0 z-40 -translate-x-1/2 translate-y-[35%]">
+          <Image
+            src="/images/logo-with-glow.png"
+            alt=""
+            width={213}
+            height={246}
+            priority
+            className="h-[130px] w-auto sm:h-[160px] md:h-[190px] lg:h-[210px]"
+          />
+        </div>
+
+        {/* Combined wave with white top and blue bottom */}
         <Image
           src="/images/full-wave-clear.png"
           alt=""
           width={1024}
           height={86}
           priority
-          className="h-auto w-full"
+          className="w-full h-auto"
         />
-
-        <div className="pointer-events-none absolute left-1/2 top-[28%] z-30 -translate-x-1/2 -translate-y-[40%] sm:top-[18%]">
-          <Image
-            src="/images/logo-before-about.png"
-            alt=""
-            width={213}
-            height={246}
-            className="h-[88px] w-auto sm:h-[120px] md:h-[140px] lg:h-[150px]"
-          />
-        </div>
       </div>
     </section>
   );
