@@ -56,7 +56,7 @@ function NavLink({
     <button
       type="button"
       onClick={() => scrollToSection(targetId)}
-      className="flex cursor-pointer items-center gap-1 whitespace-nowrap text-[13px] font-medium uppercase tracking-wide text-dark-blue transition-colors hover:text-secondary xl:text-[14px]"
+      className="flex items-center gap-1 whitespace-nowrap text-[13px] font-medium uppercase tracking-wide text-dark-blue transition-colors hover:text-secondary xl:text-[14px]"
     >
       {label}
       {hasDropdown && <ChevronDownIcon className="h-3 w-3 text-gold" />}
@@ -64,16 +64,13 @@ function NavLink({
   );
 }
 
-/**
- * Same logo. Top bar uses a cream center cutout so the circle isn't
- * painted over a continuous blue strip (matches Figma notch).
- */
+
 function LogoMark() {
   return (
     <button
       type="button"
       onClick={() => scrollToSection("hero")}
-      className="absolute left-1/2 top-0 z-50 -translate-x-1/2 cursor-pointer"
+      className="absolute left-1/2 top-1 z-40 -translate-x-1/2"
       aria-label="Big Picture Pediatric Dentistry — Home"
     >
       <Image
@@ -82,7 +79,7 @@ function LogoMark() {
         width={306}
         height={194}
         priority
-        className="h-auto w-[150px] bg-transparent md:w-[180px] xl:w-[200px]"
+        className="h-auto w-[150px] bg-transparent md:w-[180px] xl:w-[250px]"
       />
     </button>
   );
@@ -95,28 +92,15 @@ export default function Header() {
     <header className="relative z-50 overflow-visible">
       <LogoMark />
 
-      {/* Top bar with center cutout for the logo circle */}
-      <div className="relative z-20 h-11 md:h-10">
-        <div className="absolute inset-0 bg-cream md:hidden" />
-        <div className="absolute inset-0 hidden md:flex">
-          <div className="h-full flex-1 bg-light-blue" />
-          <div className="relative h-full w-[70px] shrink-0 bg-cream md:w-[78px] xl:w-[86px]">
-            <div
-              className="pointer-events-none absolute left-1/2 top-full h-[70px] w-[70px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cream md:h-[78px] md:w-[78px] xl:h-[86px] xl:w-[86px]"
-              aria-hidden="true"
-            />
-          </div>
-          <div className="h-full flex-1 bg-light-blue" />
-        </div>
-
-        <Container className="relative z-10 flex h-full items-center justify-between">
+      <div className="relative z-20 bg-cream md:bg-light-blue">
+        <Container className="flex h-11 items-center justify-between md:h-10">
           <button
             type="button"
             onClick={() => {
               window.location.href = phoneHref;
             }}
             aria-label={`Call us at ${phoneNumber}`}
-            className="inline-flex cursor-pointer items-center justify-center md:hidden"
+            className="inline-flex items-center justify-center md:hidden"
           >
             <Image
               src="/icons/phone-chat-smallscreen.svg"
@@ -132,7 +116,7 @@ export default function Header() {
             onClick={() => {
               window.location.href = phoneHref;
             }}
-            className="hidden cursor-pointer items-center gap-2 text-sm font-semibold text-white md:flex"
+            className="hidden items-center gap-2 text-sm font-semibold text-white md:flex"
           >
             <span>CALL US TODAY:</span> {phoneNumber}
           </button>
@@ -145,7 +129,7 @@ export default function Header() {
                   type="button"
                   onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
                   aria-label={label}
-                  className="flex cursor-pointer items-center justify-center"
+                  className="flex items-center justify-center"
                 >
                   <Image src={icon} alt="" width={14} height={14} className="h-full w-full" />
                 </button>
@@ -154,7 +138,7 @@ export default function Header() {
 
             <button
               type="button"
-              className="inline-flex cursor-pointer items-center justify-center xl:hidden"
+              className="inline-flex items-center justify-center xl:hidden"
               aria-expanded={isOpen}
               aria-controls="mobile-nav"
               aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -195,7 +179,7 @@ export default function Header() {
               type="button"
               variant="gold"
               size="pill"
-              className="cursor-pointer text-[11px] xl:text-[13px]"
+              className="text-[11px] xl:text-[13px]"
               onClick={() => scrollToSection("contact")}
             >
               <span className="hidden xl:inline">Request an Appointment</span>
@@ -225,7 +209,7 @@ export default function Header() {
               <button
                 key={link.targetId}
                 type="button"
-                className="cursor-pointer rounded-lg px-3 py-2.5 text-left text-sm font-medium text-dark-blue hover:bg-black/5"
+                className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-dark-blue hover:bg-black/5"
                 onClick={() => {
                   setIsOpen(false);
                   scrollToSection(link.targetId);
@@ -240,7 +224,7 @@ export default function Header() {
               type="button"
               variant="gold"
               size="pill"
-              className="w-full cursor-pointer"
+              className="w-full"
               onClick={() => {
                 setIsOpen(false);
                 scrollToSection("contact");
