@@ -10,7 +10,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-x-clip pt-28 text-center text-white sm:pt-32 lg:pt-36"
+      className="relative isolate overflow-x-clip pt-24 text-center text-white sm:pt-28 md:pt-32 lg:pt-36"
     >
       <Image
         src="/images/hero.jpg"
@@ -31,39 +31,39 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <Container className="relative z-10 flex flex-col items-center pb-16 sm:pb-20 lg:pb-24">
-        <p className="font-cursive text-2xl text-gold sm:text-3xl">
+      <Container className="relative z-10 flex flex-col items-center px-4 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+        <p className="font-cursive text-xl text-gold sm:text-2xl md:text-3xl">
           Loved By Kids And Parents Alike
         </p>
 
         <h1
           id="hero-heading"
-          className="mt-3 text-4xl leading-[0.95] font-extrabold uppercase sm:text-6xl"
+          className="mt-3 text-[2rem] leading-[0.95] font-extrabold uppercase sm:text-5xl md:text-6xl"
         >
           Big Picture
           <br />
           Pediatric Dentistry
         </h1>
 
-        <p className="mt-5 max-w-2xl text-base text-white/90 sm:text-lg">
+        <p className="mt-4 max-w-2xl text-sm text-white/90 sm:mt-5 sm:text-base md:text-lg">
           Proudly caring for smiles in and around Houston, Clear Lake, League
           City, and Friendswood, TX.
         </p>
 
-        <div className="mt-8 flex w-full max-w-3xl flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
+        <div className="mt-6 flex w-full max-w-3xl flex-col items-stretch justify-center gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
           <Button
             href="/appointment"
             variant="gold"
             size="pill"
-            className="whitespace-nowrap"
+            className="justify-between px-3 text-[11px] sm:justify-center sm:px-4 sm:text-[13px]"
           >
-            Request an Appointment
+            <span className="truncate">Request an Appointment</span>
             <Image
               src="/icons/request-appointment-icon.svg"
               alt=""
               width={36}
               height={36}
-              className="h-9 w-9 shrink-0"
+              className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
             />
           </Button>
 
@@ -71,27 +71,21 @@ export default function Hero() {
             href={phoneHref}
             variant="outline"
             size="pill"
-            className="gap-3 whitespace-nowrap pl-1.5 pr-5"
+            className="justify-center gap-2 pl-1.5 pr-4 text-[11px] sm:gap-3 sm:pr-5 sm:text-[13px]"
           >
             <Image
               src="/icons/callicon.svg"
               alt=""
               width={36}
               height={36}
-              className="h-9 w-9 shrink-0"
+              className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
             />
-            Call Us: {phoneDisplay}
+            <span className="truncate">Call Us: {phoneDisplay}</span>
           </Button>
         </div>
       </Container>
 
-      {/*
-        Full wave asset from Figma:
-        - transparent top → hero shows through
-        - blue wave + cream bottom → transition into About
-        - logo sits in the center valley
-      */}
-      <div className="relative z-20 -mt-8 -mb-10 w-full leading-[0] sm:-mt-10 sm:-mb-14 md:-mt-12 md:-mb-16">
+      <div className="relative z-20 -mt-6 -mb-8 w-full leading-[0] sm:-mt-8 sm:-mb-12 md:-mt-12 md:-mb-16">
         <Image
           src="/images/full-wave-clear.png"
           alt=""
@@ -101,13 +95,13 @@ export default function Hero() {
           className="h-auto w-full"
         />
 
-        <div className="pointer-events-none absolute left-1/2 top-[28%] z-30 -translate-x-1/2 -translate-y-[40%] sm:top-[30%]">
+        <div className="pointer-events-none absolute left-1/2 top-[28%] z-30 -translate-x-1/2 -translate-y-[40%] sm:top-[18%]">
           <Image
             src="/images/logo-before-about.png"
             alt=""
             width={213}
             height={246}
-            className="h-[110px] w-auto sm:h-[130px] md:h-[150px]"
+            className="h-[88px] w-auto sm:h-[120px] md:h-[140px] lg:h-[150px]"
           />
         </div>
       </div>

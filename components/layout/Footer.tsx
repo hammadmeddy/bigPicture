@@ -47,13 +47,7 @@ function FieldInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-dark-blue text-white">
-      {/*
-        Full footer wave from Figma:
-        - cream top → blends from section above
-        - gold wave + transparent bottom → dark footer shows through
-        - logo sits on the center of the wave
-      */}
+    <footer id="contact" className="relative bg-dark-blue text-white">
       <div className="relative z-20 -mt-2 w-full leading-[0] sm:-mt-4">
         <Image
           src="/images/footer-wave-clear.png"
@@ -70,16 +64,18 @@ export default function Footer() {
             alt="Big Picture Pediatric Dentistry"
             width={213}
             height={246}
-            className="h-[110px] w-auto sm:h-[130px] md:h-[150px] lg:h-[190px] "
+            className="h-[90px] w-auto sm:h-[120px] md:h-[150px] lg:h-[190px]"
           />
         </div>
       </div>
 
-      <Container className="pt-16 sm:pt-20">
-        <div className="grid gap-12 border-b border-white/20 pb-16 lg:grid-cols-3 lg:gap-0">
+      <Container className="pt-14 sm:pt-16 md:pt-20">
+        <div className="grid gap-10 border-b border-white/20 pb-12 sm:gap-12 sm:pb-16 lg:grid-cols-3 lg:gap-0">
           <div className="lg:border-r lg:border-white/20 lg:pr-8 xl:pr-10">
-            <p className="font-cursive text-3xl text-gold">Don&apos;t Be A Stranger</p>
-            <p className="mt-1 text-base font-bold tracking-wide text-white">
+            <p className="font-cursive text-2xl text-gold sm:text-3xl">
+              Don&apos;t Be A Stranger
+            </p>
+            <p className="mt-1 text-sm font-bold tracking-wide text-white sm:text-base">
               REQUEST AN APPOINTMENT
             </p>
 
@@ -89,11 +85,11 @@ export default function Footer() {
               encType="text/plain"
               className="mt-5 flex flex-col gap-3"
             >
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <FieldInput name="firstName" placeholder="Full name" aria-label="Full name" />
                 <FieldInput name="lastName" placeholder="Last name" aria-label="Last name" />
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <FieldInput name="phone" type="tel" placeholder="Phone" aria-label="Phone" />
                 <FieldInput name="email" type="email" placeholder="Email" aria-label="Email" />
               </div>
@@ -144,11 +140,11 @@ export default function Footer() {
               alt="Big Picture Pediatric Dentistry"
               width={320}
               height={80}
-              className="h-auto w-[200px] sm:w-[240px]"
+              className="h-auto w-[180px] sm:w-[220px] md:w-[240px]"
             />
 
             <p
-              className="mt-6 w-full max-w-xs bg-[#364c66] py-2 text-center text-[18px] font-bold uppercase text-[#DDBA83]"
+              className="mt-5 w-full max-w-xs bg-[#364c66] py-2 text-center text-base font-bold uppercase text-[#DDBA83] sm:mt-6 sm:text-[18px]"
               style={{ fontFamily: '"Proxima Nova", var(--font-poppins), sans-serif' }}
             >
               Opening Hours
@@ -162,7 +158,7 @@ export default function Footer() {
                     className="mb-1 flex-1 border-b border-dotted border-white/30"
                     aria-hidden="true"
                   />
-                  <span>{hours}</span>
+                  <span className="shrink-0">{hours}</span>
                 </li>
               ))}
             </ul>
@@ -186,11 +182,13 @@ export default function Footer() {
           </div>
 
           <div className="lg:pl-8 xl:pl-10">
-            <p className="text-base font-bold tracking-wide text-white">CONTACT US</p>
+            <p className="text-center text-base font-bold tracking-wide text-white lg:text-left">
+              CONTACT US
+            </p>
 
             <div className="mt-5 flex flex-col gap-5">
-              <div className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-solid border-[#DDBA83]">
+              <div className="flex items-center justify-center gap-4 lg:justify-start">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-solid border-[#DDBA83] sm:h-12 sm:w-12">
                   <Image
                     src="/icons/call-footer.svg"
                     alt=""
@@ -212,8 +210,8 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-solid border-[#DDBA83]">
+              <div className="flex items-center justify-center gap-4 lg:justify-start">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-solid border-[#DDBA83] sm:h-12 sm:w-12">
                   <Image
                     src="/icons/email-footer.svg"
                     alt=""
@@ -222,7 +220,7 @@ export default function Footer() {
                     className="h-4 w-5"
                   />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-bold tracking-wide text-white uppercase">
                     Email Us
                   </p>
@@ -235,8 +233,8 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <span className="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-solid border-[#DDBA83]">
+              <div className="flex items-start justify-center gap-4 lg:justify-start">
+                <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-solid border-[#DDBA83] sm:h-12 sm:w-12">
                   <Image
                     src="/icons/location-footer.svg"
                     alt=""
@@ -276,9 +274,11 @@ export default function Footer() {
             <ArrowUpIcon className="h-4 w-4" />
           </button>
 
-          <div className="flex flex-col items-center justify-between gap-2 py-5 text-xs text-white/60 sm:flex-row">
-            <p className="text-white">© Big Picture Pediatric Dentistry {new Date().getFullYear()}</p>
-            <Link href="/privacy-policy" className="text-white hover:text-white">
+          <div className="flex flex-col items-center justify-between gap-2 py-5 text-center text-xs text-white/60 sm:flex-row sm:text-left">
+            <p className="text-white">
+              © Big Picture Pediatric Dentistry {new Date().getFullYear()}
+            </p>
+            <Link href="/privacy-policy" className="text-white hover:text-white/80">
               Privacy Policy
             </Link>
           </div>

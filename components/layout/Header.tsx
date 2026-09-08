@@ -64,10 +64,7 @@ function NavLink({
   );
 }
 
-/**
- * Logo only — no cream/white plate.
- * The hero overlay (`hero-overall.png`) provides the notch shape.
- */
+
 function LogoMark() {
   return (
     <button
@@ -82,7 +79,7 @@ function LogoMark() {
         width={306}
         height={194}
         priority
-        className="h-auto w-[150px] bg-transparent md:w-[180px] xl:w-[200px]"
+        className="h-auto w-[150px] bg-transparent md:w-[180px] xl:w-[250px]"
       />
     </button>
   );
@@ -141,7 +138,7 @@ export default function Header() {
 
             <button
               type="button"
-              className="inline-flex items-center justify-center md:hidden"
+              className="inline-flex items-center justify-center xl:hidden"
               aria-expanded={isOpen}
               aria-controls="mobile-nav"
               aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -172,17 +169,21 @@ export default function Header() {
 
           <div className="w-[160px] md:w-[180px] xl:w-[200px]" aria-hidden="true" />
 
-          <div className="hidden shrink-0 items-center gap-4 justify-self-end xl:flex xl:gap-5">
-            {rightNavLinks.map((link) => (
-              <NavLink key={link.targetId} {...link} />
-            ))}
+          <div className="hidden shrink-0 items-center gap-4 justify-self-end md:flex xl:gap-5">
+            <div className="hidden items-center gap-4 xl:flex xl:gap-5">
+              {rightNavLinks.map((link) => (
+                <NavLink key={link.targetId} {...link} />
+              ))}
+            </div>
             <Button
               type="button"
               variant="gold"
               size="pill"
+              className="text-[11px] xl:text-[13px]"
               onClick={() => scrollToSection("contact")}
             >
-              Request an Appointment
+              <span className="hidden xl:inline">Request an Appointment</span>
+              <span className="xl:hidden">Appointment</span>
               <Image
                 src="/icons/request-appointment-icon.svg"
                 alt=""
@@ -218,7 +219,7 @@ export default function Header() {
               </button>
             ))}
           </nav>
-          <div className="mt-2 px-3">
+          <div className="mt-2 px-3 md:hidden">
             <Button
               type="button"
               variant="gold"

@@ -52,7 +52,7 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 transition-colors",
+    "inline-flex cursor-pointer items-center justify-center gap-2 transition-colors",
     "focus-visible:outline-2 focus-visible:outline-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",
     variants[variant],
